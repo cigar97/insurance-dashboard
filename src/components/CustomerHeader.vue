@@ -1,8 +1,12 @@
 <script setup>
-// 接收從 App.vue 傳進來的 currentView 變數
+// 接收從 App.vue 傳進來的狀態與「真實客戶資料」
 defineProps({
   currentView: {
     type: String,
+    required: true
+  },
+  clientData: {
+    type: Object,
     required: true
   }
 })
@@ -11,14 +15,14 @@ defineProps({
 <template>
   <div class="header">
     <div class="header-title">
-      <h2>👤 客戶：葉先生 (29歲)</h2>
+      <h2>👤 客戶：{{ clientData.name }} ({{ clientData.age }}歲)</h2>
       
       <span v-if="currentView === 'concept'" class="status-badge concept-badge fade-in">
         💡 觀念溝通階段
       </span>
       
       <span v-if="currentView === 'dashboard'" class="status-badge premium-badge fade-in">
-        💰 年繳保費：32,550 元
+        💰 年繳保費：{{ clientData.premium }} 元
       </span>
     </div>
   </div>
