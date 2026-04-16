@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import DataImporter from './components/DataImporter.vue'
 import CustomerHeader from './components/CustomerHeader.vue'
 import ConceptTimeline from './components/ConceptTimeline.vue'
-import RadarChart from './components/RadarChart.vue'
+import CoverageProgress from './components/CoverageProgress.vue'
 import ScenarioCalculator from './components/ScenarioCalculator.vue'
 
 // 應用程式的狀態管理
@@ -58,7 +58,7 @@ const resetApp = () => {
           </div>
           
           <div v-if="currentView === 'dashboard'" class="fade-in">
-            <RadarChart :coverageData="globalClientData.coverage" />
+            <RaCoverageProgress :coverageData="globalClientData.coverage" />
             <ScenarioCalculator />
           </div>
         </div>
