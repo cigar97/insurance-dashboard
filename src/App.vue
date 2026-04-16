@@ -58,7 +58,7 @@ const resetApp = () => {
           </div>
           
           <div v-if="currentView === 'dashboard'" class="fade-in">
-            <RaCoverageProgress :coverageData="globalClientData.coverage" />
+            <CoverageProgress :coverageData="globalClientData.coverage" />
             <ScenarioCalculator />
           </div>
         </div>
